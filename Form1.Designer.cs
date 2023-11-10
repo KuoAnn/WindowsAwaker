@@ -46,15 +46,15 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(171, 39);
             Controls.Add(ButtonSwitch);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             Name = "Form1";
-            ShowInTaskbar = false;
+            Opacity = 0.65D;
             Text = "Awaker";
             TopMost = true;
             ResumeLayout(false);
