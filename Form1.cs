@@ -66,8 +66,13 @@ namespace Awaker
         {
             DateTime now = DateTime.Now;
             // 計算距離 18:00 的時間間隔
-            DateTime targetTime = new(now.Year, now.Month, now.Day, 18, 0, 0);
-            TimeSpan timeRemaining = targetTime - now;
+            TimeSpan timeRemaining = (DateTime)new(now.Year, now.Month, now.Day, 18, 0, 0) - now;
+
+            if (timeRemaining.TotalSeconds <= 0)
+            {
+                timeRemaining = (DateTime)new(now.Year, now.Month, now.Day, 23, 59, 59) - now;
+            }
+
             var timer = new System.Timers.Timer(timeRemaining.TotalMilliseconds);
             timer.Elapsed += (sender, e) =>
             {
